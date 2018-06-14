@@ -14,22 +14,19 @@ and open the template in the editor.
     <body>
         <div id="top">
             <div id="titulo">
-                <img src="img/logo.png" class="imgLogo">
+                <!--<img src="img/si.png" id="imghome">-->
                 <div id="logo">
                     <h1 id="nomeTitulo">PP Lanches</h1>
                 </div>
                 <ul id="menuCadastros">
-                    <li>Cadastro:</li>
-                    <li class="mc"><a href="funcionarioCadastro.jsp">Funcionario</a></li>
-                </ul>
-                <div id="pesq">
-                     <ul id="menuPesquisas">
-                    <li class="pesqTitulo">Pesquisa:</li>
-                    <li><a href="FrontController?action=LerFuncionario" class="pesqt">Funcionario</a></li>
+                    <li>MENU</li>
+                    <li class="mc"><a href="menuPizza.jsp">Pizza</a></li>
+                    <li class="mc"><a href="menuHamburguer.jsp">Hamburguer</a></li>
+                    <li class="mc"><a href="menuHamburguer.jsp">Carrinho</a></li>
                 </ul>
                 </div>
             </div>
         </div>
-        <img src="img/si.png" id="imghome">
+      <!--<img src="img/si.png" id="imghome">-->
     </body>
 </html>
