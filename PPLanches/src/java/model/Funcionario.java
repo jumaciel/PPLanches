@@ -5,15 +5,15 @@ import state.FuncionarioCadastrado;
 
 public class Funcionario {
     private int codFunc;
-    private String nome;
-    private String sobrenome;
+    private String nomeFunc;
+    private String sobrenomeFunc;
     private String status;
     private FuncionarioEstado funcEstado;
 
     public Funcionario(int codFunc, String nome, String sobrenome, String status ) {
         this.codFunc = codFunc;
-        this.nome = nome;
-        this.sobrenome = sobrenome;
+        this.nomeFunc = nome;
+        this.sobrenomeFunc = sobrenome;
         this.status = status;
 
     }
@@ -42,20 +42,20 @@ public class Funcionario {
         this.codFunc = codFunc;
     }
 
-    public String getNome() {
-        return nome;
+    public String getNomeFunc() {
+        return nomeFunc;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setNomeFunc(String nomeFunc) {
+        this.nomeFunc = nomeFunc;
     }
 
-    public String getSobrenome() {
-        return sobrenome;
+    public String getSobrenomeFunc() {
+        return sobrenomeFunc;
     }
 
-    public void setSobrenome(String sobrenome) {
-        this.sobrenome = sobrenome;
+    public void setSobrenomeFunc(String sobrenomeFunc) {
+        this.sobrenomeFunc = sobrenomeFunc;
     }
 
     public String getStatus() {

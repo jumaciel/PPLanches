@@ -12,13 +12,12 @@ public class FuncionarioDemitido implements FuncionarioEstado{
 
 
     public String Cadastrado(Funcionario f) { 
-        f.setFuncEstado(new FuncionarioCadastrado());
         return "Cadastro não realizado uma vez que demitido";
     }
 
 
     public String Demitido(Funcionario f) {
-        return "Funcionario(a) não pode ser Demitido";
+        return "Funcionario(a) já demitido.";
     }
 
 }

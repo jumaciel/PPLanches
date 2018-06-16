@@ -7,30 +7,30 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import model.Funcionario;
+import model.Pedido;
 
-public class FuncionarioDAO {
+public class PedidoDAO {
     
-    private static FuncionarioDAO instance = new FuncionarioDAO();
+    private static PedidoDAO instance = new PedidoDAO();
     
-    private FuncionarioDAO() {
+    private PedidoDAO() {
         
     }
     
-    public static FuncionarioDAO getInstance() {
+    public static PedidoDAO getInstance() {
         return instance;
     }
     
-    public void save(Funcionario funcionario) throws SQLException,
+    public void save(Pedido pedido) throws SQLException,
             ClassNotFoundException {
         Connection conn = null;
         Statement st = null;
         try {
             conn = DataBase.getInstance().getConnection();
             st = conn.createStatement();
-            st.execute("insert into funcionario (CD_FUNC , NM_FUNC , SNM_FUNC , STATUS )"
-                    + " values ('" + funcionario.getCodFunc() + "', '" + funcionario.getNomeFunc() + "', '" + funcionario.getSobrenomeFunc() + "'"
-                    + ", '" + funcionario.getStatus() + "')");
+            st.execute("insert into pedido (CD_FUNC , NM_FUNC , SNM_FUNC , STATUS )"
+                    + " values ('" + pedido.getCodFunc() + "', '" + pedido.getNomeFunc() + "', '" + pedido.getSobrenomeFunc() + "'"
+                    + ", '" + pedido.getStatus() + "')");
         } catch (SQLException e) {
             throw e;
         } finally {
@@ -38,13 +38,13 @@ public class FuncionarioDAO {
         }
     }
     
-    public void delete(Funcionario funcionario) throws SQLException, ClassNotFoundException {
+    public void delete(Pedido pedido) throws SQLException, ClassNotFoundException {
         Connection conn = null;
         Statement st = null;
         try {
             conn = DataBase.getInstance().getConnection();
             st = conn.createStatement();
-            st.execute("delete from funcionario where CD_FUNC ='" + funcionario.getCodFunc() + "'");
+            st.execute("delete from pedido where CD_FUNC ='" + pedido.getCodFunc() + "'");
         } catch (SQLException e) {
             throw e;
         } finally {
@@ -52,39 +52,39 @@ public class FuncionarioDAO {
         }
     }
     
-    public static List<Funcionario> obterFuncionarios() throws ClassNotFoundException {
+    public static List<Pedido> obterPedidos() throws ClassNotFoundException {
         Connection conn = null;
         Statement st = null;
-        List<Funcionario> funcionarios = new ArrayList<Funcionario>();
+        List<Pedido> pedidos = new ArrayList<Pedido>();
         try {
             conn = DataBase.getInstance().getConnection();
             st = conn.createStatement();
-            ResultSet rs = st.executeQuery("select * from funcionario");
+            ResultSet rs = st.executeQuery("select * from pedido");
             while (rs.next()) {
-                Funcionario funcionario = new Funcionario(rs.getInt("CD_FUNC"),
+                Pedido pedido = new Pedido(rs.getInt("CD_FUNC"),
                         rs.getString("NM_FUNC"),
                         rs.getString("SNM_FUNC"),
                         rs.getString("STATUS"));
-                funcionarios.add(funcionario);
+                pedidos.add(pedido);
             }
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
             closeResources(conn, st);
         }
-        return funcionarios;
+        return pedidos;
     }
     
-    public static Funcionario obterFuncionario(int codigo) throws ClassNotFoundException {
+    public static Pedido obterPedido(int codigo) throws ClassNotFoundException {
         Connection conn = null;
         Statement st = null;
-        Funcionario funcionario = null;
+        Pedido pedido = null;
         try {
             conn = DataBase.getInstance().getConnection();
             st = conn.createStatement();
-            ResultSet rs = st.executeQuery("select * from funcionario where CD_FUNC = " + codigo);
+            ResultSet rs = st.executeQuery("select * from pedido where CD_FUNC = " + codigo);
             rs.first();
-            funcionario = new Funcionario(rs.getInt("CD_FUNC"),
+            pedido = new Pedido(rs.getInt("CD_FUNC"),
                         rs.getString("NM_FUNC"),
                         rs.getString("SNM_FUNC"),
                         rs.getString("STATUS"));
@@ -93,19 +93,19 @@ public class FuncionarioDAO {
         } finally {
             closeResources(conn, st);
         }
-        return funcionario;
+        return pedido;
     }
     
-    public static void alterar(Funcionario funcionario) throws SQLException, ClassNotFoundException {
+    public static void alterar(Pedido pedido) throws SQLException, ClassNotFoundException {
         Connection conn = null;
         try {
             conn = DataBase.getInstance().getConnection();
-            String sql = "update funcionario set NM_FUNC = ?, SNM_FUNC = ? , STATUS = ? where CD_FUNC = ?";
+            String sql = "update pedido set NM_FUNC = ?, SNM_FUNC = ? , STATUS = ? where CD_FUNC = ?";
             PreparedStatement comando = conn.prepareStatement(sql);
-            comando.setString(1, funcionario.getNomeFunc());            
-            comando.setString(2, funcionario.getSobrenomeFunc());
-            comando.setString(3, funcionario.getStatus());
-            comando.setInt(4, funcionario.getCodFunc());
+            comando.setString(1, pedido.getNomeFunc());            
+            comando.setString(2, pedido.getSobrenomeFunc());
+            comando.setString(3, pedido.getStatus());
+            comando.setInt(4, pedido.getCodFunc());
             comando.execute();
             comando.close();
             conn.close();
