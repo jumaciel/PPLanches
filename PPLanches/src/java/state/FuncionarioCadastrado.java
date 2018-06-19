@@ -11,7 +11,7 @@ public class FuncionarioCadastrado implements FuncionarioEstado{
 
     @Override
     public String Cadastrado(Funcionario f) {
-        return "Cadastro não realizado uma vez que demitido";
+        return "Funcionário já cadastrado";
     }
 
     @Override

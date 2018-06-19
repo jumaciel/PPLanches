@@ -27,11 +27,11 @@ public class PrepararEditarFuncionarioAction implements Action {
             
             if (s.equals("Cadastrado")) {
                 funcionario.setFuncEstado(new FuncionarioCadastrado());
-                String r = funcionario.getNome() + " esta no estado " + funcionario.getFuncEstado().getEstado(funcionario) + " - " + funcionario.Demitido(funcionario);
+                String r = funcionario.getNomeFunc() + " esta no estado " + funcionario.getFuncEstado().getEstado(funcionario) + " - " + funcionario.Demitido(funcionario);
                 request.setAttribute("r", r);
             } else if (s.equals("Demitido")) {
                 funcionario.setFuncEstado(new FuncionarioDemitido());
-                String r = funcionario.getNome() + " esta no estado " + funcionario.getFuncEstado().getEstado(funcionario) + " - " + funcionario.Demitido(funcionario);
+                String r = funcionario.getNomeFunc() + " esta no estado " + funcionario.getFuncEstado().getEstado(funcionario) + " - " + funcionario.Demitido(funcionario);
                 request.setAttribute("r", r);
             }
           

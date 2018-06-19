@@ -3,16 +3,16 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-        <title>JSP Page</title>
+        <title>PP Lanchesv</title>
     </head>
     <body>
                <table border="1" bgcolor="#f9f9f9" cellpadding="10" cellspacing="0" >
             <tr>
-                <th bgcolor="#d4d4d4" colspan="8"> <h2>Sistema de Posto de Saúde</h2></th>      
+                <th bgcolor="#d4d4d4" colspan="8"> <h2>PP Lanches</h2></th>      
             </tr>
             <tr>
                 <td>
-                    <h3>Medico deletado com sucesso!</h3>
+                    <h3>Funcionario deletado com sucesso!</h3>
                 </td>
             </tr>
         </table>
