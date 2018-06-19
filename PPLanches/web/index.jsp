@@ -27,6 +27,10 @@ and open the template in the editor.
                     <li class="pesqTitulo">Pesquisa:</li>
                     <li><a href="FrontController?action=LerFuncionario" class="pesqt">Funcionario</a></li>
                 </ul>
+                    <li>MENU</li>
+                    <li class="mc"><a href="menuPizza.jsp">Pizza</a></li>
+                    <li class="mc"><a href="menuHamburguer.jsp">Hamburguer</a></li>
+                    <li class="mc"><a href="menuHamburguer.jsp">Carrinho</a></li>
                 </div>
             </div>
         </div>
