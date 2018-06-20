@@ -21,30 +21,29 @@ public class PedidoDAO {
         return instance;
     }
     
-    public void save(Pedido pedido) throws SQLException,
+     public void save(Pedido pedido) throws SQLException,
             ClassNotFoundException {
         Connection conn = null;
         Statement st = null;
         try {
-            conn = DataBase.getInstance().getConnection();
+            conn = DatabaseLocator.getInstance().getConnection();
             st = conn.createStatement();
-            st.execute("insert into pedido (CD_FUNC , NM_FUNC , SNM_FUNC , STATUS )"
-                    + " values ('" + pedido.getCodFunc() + "', '" + pedido.getNomeFunc() + "', '" + pedido.getSobrenomeFunc() + "'"
-                    + ", '" + pedido.getStatus() + "')");
+            st.execute("insert into pedido (status,pedido,valorTotal,descricao)"
+                    + " values ('" + pedido.getStatus() + "', '" + pedido.getValorTotal() + "', '" + pedido.getDescricao() + "'"
+                    + ", '" + pedido.getCodPed() + "')");
         } catch (SQLException e) {
             throw e;
         } finally {
             closeResources(conn, st);
         }
     }
-    
     public void delete(Pedido pedido) throws SQLException, ClassNotFoundException {
         Connection conn = null;
         Statement st = null;
         try {
-            conn = DataBase.getInstance().getConnection();
+             conn = DatabaseLocator.getInstance().getConnection();
             st = conn.createStatement();
-            st.execute("delete from pedido where CD_FUNC ='" + pedido.getCodFunc() + "'");
+            st.execute("delete from pedido where id ='" + pedido.getCodPed()+ "'");
         } catch (SQLException e) {
             throw e;
         } finally {
@@ -57,14 +56,14 @@ public class PedidoDAO {
         Statement st = null;
         List<Pedido> pedidos = new ArrayList<Pedido>();
         try {
-            conn = DataBase.getInstance().getConnection();
+            conn = DatabaseLocator.getInstance().getConnection();
             st = conn.createStatement();
             ResultSet rs = st.executeQuery("select * from pedido");
             while (rs.next()) {
-                Pedido pedido = new Pedido(rs.getInt("CD_FUNC"),
-                        rs.getString("NM_FUNC"),
-                        rs.getString("SNM_FUNC"),
-                        rs.getString("STATUS"));
+                 Pedido pedido = new Pedido(rs.getInt("codPed"),
+                        rs.getString("status"),
+                        rs.getFloat("valorTotal"),
+                        rs.getString("descricao"));
                 pedidos.add(pedido);
             }
         } catch (SQLException e) {
@@ -80,14 +79,14 @@ public class PedidoDAO {
         Statement st = null;
         Pedido pedido = null;
         try {
-            conn = DataBase.getInstance().getConnection();
+            conn = DatabaseLocator.getInstance().getConnection();
             st = conn.createStatement();
             ResultSet rs = st.executeQuery("select * from pedido where CD_FUNC = " + codigo);
             rs.first();
             pedido = new Pedido(rs.getInt("CD_FUNC"),
-                        rs.getString("NM_FUNC"),
-                        rs.getString("SNM_FUNC"),
-                        rs.getString("STATUS"));
+                       rs.getString("status"),
+                        rs.getFloat("valorTotal"),
+                        rs.getString("descricao"));
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
@@ -99,13 +98,13 @@ public class PedidoDAO {
     public static void alterar(Pedido pedido) throws SQLException, ClassNotFoundException {
         Connection conn = null;
         try {
-            conn = DataBase.getInstance().getConnection();
-            String sql = "update pedido set NM_FUNC = ?, SNM_FUNC = ? , STATUS = ? where CD_FUNC = ?";
+              conn = DatabaseLocator.getInstance().getConnection();
+            String sql = "update pedido set status = ?,valorTotal =?,descricao=?,  where codPed = ?";
             PreparedStatement comando = conn.prepareStatement(sql);
-            comando.setString(1, pedido.getNomeFunc());            
-            comando.setString(2, pedido.getSobrenomeFunc());
-            comando.setString(3, pedido.getStatus());
-            comando.setInt(4, pedido.getCodFunc());
+            comando.setString(1, pedido.getStatus());
+            comando.setFloat(2, pedido.getValorTotal());
+            comando.setString(3, pedido.getDescricao());
+            comando.setInt(4,pedido.getCodPed());
             comando.execute();
             comando.close();
             conn.close();

@@ -1,15 +1,22 @@
 package model;
 
+import java.util.Observable;
 import state.PedidoCadastrado;
+import state.PedidoEmEntrega;
+import state.PedidoEmProducao;
+import state.PedidoEntregue;
 import state.PedidoEstado;
+import state.PedidoFinalizado;
 
-public class Pedido {
+public class Pedido extends Observable {
     
     private int codPed;
     private String descricao;
     private float valorTotal;
     private String status;
     private PedidoEstado pedidoEstado;
+
+  
     
     public Pedido(int codPed, String descricao, float valorTotal , String status) {
         this.codPed = codPed;
@@ -25,6 +32,10 @@ public class Pedido {
     public Pedido() {
         this.pedidoEstado = new PedidoCadastrado();
     }
+
+  
+
+  
 
     public int getCodPed() {
         return codPed;
@@ -63,13 +74,35 @@ public class Pedido {
     }
 
     public void setPedidoEstado(PedidoEstado pedidoEstado) {
-        this.pedidoEstado = pedidoEstado;
+       this.pedidoEstado = pedidoEstado;
+        setChanged();
+        notifyObservers();
     }
     
     
     
- 
     
-    
-    
+ public void setEstadoFromString(String estado) {
+        if (estado.equals("Pedido cadastrado")) {
+            this.pedidoEstado = new PedidoCadastrado();
+            
+        } else if (estado.equals("Pedido sendo entregue.")) {
+            this.pedidoEstado = new PedidoEmEntrega();
+            
+        } else if (estado.equals("Pedido em produção.")) {
+            this.pedidoEstado = new PedidoEmProducao();
+            
+        } else if (estado.equals("Pedido entregue")) {
+            this.pedidoEstado = new PedidoEntregue();
+            
+        }else if (estado.equals("Pedido já finalizado.")) {
+            this.pedidoEstado = new PedidoFinalizado();
+    }
+ }
+
+   
 }
+    
+    
+    
+

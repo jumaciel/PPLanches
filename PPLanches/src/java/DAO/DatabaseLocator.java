@@ -4,14 +4,14 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class DataBase {
+public class DatabaseLocator {
     
-    private static DataBase instance = new DataBase();
-    public static DataBase getInstance(){
+    private static DatabaseLocator instance = new DatabaseLocator();
+    public static DatabaseLocator getInstance(){
         return instance;
     }
 
-    private DataBase() {
+    private DatabaseLocator() {
     }
     
     public Connection getConnection() throws SQLException,

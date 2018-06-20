@@ -26,7 +26,7 @@ public class FuncionarioDAO {
         Connection conn = null;
         Statement st = null;
         try {
-            conn = DataBase.getInstance().getConnection();
+            conn = DatabaseLocator.getInstance().getConnection();
             st = conn.createStatement();
             st.execute("insert into funcionario (CD_FUNC , NM_FUNC , SNM_FUNC , STATUS )"
                     + " values ('" + funcionario.getCodFunc() + "', '" + funcionario.getNomeFunc() + "', '" + funcionario.getSobrenomeFunc() + "'"
@@ -42,7 +42,7 @@ public class FuncionarioDAO {
         Connection conn = null;
         Statement st = null;
         try {
-            conn = DataBase.getInstance().getConnection();
+            conn = DatabaseLocator.getInstance().getConnection();
             st = conn.createStatement();
             st.execute("delete from funcionario where CD_FUNC ='" + funcionario.getCodFunc() + "'");
         } catch (SQLException e) {
@@ -57,7 +57,7 @@ public class FuncionarioDAO {
         Statement st = null;
         List<Funcionario> funcionarios = new ArrayList<Funcionario>();
         try {
-            conn = DataBase.getInstance().getConnection();
+            conn = DatabaseLocator.getInstance().getConnection();
             st = conn.createStatement();
             ResultSet rs = st.executeQuery("select * from funcionario");
             while (rs.next()) {
@@ -80,7 +80,7 @@ public class FuncionarioDAO {
         Statement st = null;
         Funcionario funcionario = null;
         try {
-            conn = DataBase.getInstance().getConnection();
+            conn = DatabaseLocator.getInstance().getConnection();
             st = conn.createStatement();
             ResultSet rs = st.executeQuery("select * from funcionario where CD_FUNC = " + codigo);
             rs.first();
@@ -99,7 +99,7 @@ public class FuncionarioDAO {
     public static void alterar(Funcionario funcionario) throws SQLException, ClassNotFoundException {
         Connection conn = null;
         try {
-            conn = DataBase.getInstance().getConnection();
+            conn = DatabaseLocator.getInstance().getConnection();
             String sql = "update funcionario set NM_FUNC = ?, SNM_FUNC = ? , STATUS = ? where CD_FUNC = ?";
             PreparedStatement comando = conn.prepareStatement(sql);
             comando.setString(1, funcionario.getNomeFunc());            
