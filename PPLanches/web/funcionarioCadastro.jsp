@@ -19,7 +19,7 @@
                 </ul>
                 <div id="pesq">
                     <ul id="menuPesquisas">
-                        <li class="pesqTitulo">Pesquisa:</li>
+                        <li class="pesqTitulo">Pesquisa: </li>
                         <li><a href="FrontController?action=LerFuncionario" class="pesqt">Funcionario</a></li>
                     </ul>
                 </div>
