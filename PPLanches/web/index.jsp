@@ -25,7 +25,7 @@ and open the template in the editor.
                         </li>
                         <li class="pesqt2">Clientes
                             <div class="dropdown-content2">
-                                <a href="#">Cadastrar</a>
+                                <a href="clienteCadastro.jsp">Cadastrar</a>
                                 <a href="#">Pesquisar</a>
                             </div>
                         </li>

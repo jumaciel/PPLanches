@@ -1,9 +1,12 @@
 package DAO;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+/**
+ *
+ * @author Aluno
+ */
 public class DatabaseLocator {
     
     private static DatabaseLocator instance = new DatabaseLocator();
@@ -18,8 +21,7 @@ public class DatabaseLocator {
             ClassNotFoundException
     {
         Class.forName("com.mysql.jdbc.Driver");
-        Connection conn =
-                DriverManager.getConnection("jdbc:mysql://localhost/pplanches", "root", "");
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/banco", "root", "");
         
         return conn;
     }

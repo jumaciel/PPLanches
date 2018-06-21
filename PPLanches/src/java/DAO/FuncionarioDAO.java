@@ -28,7 +28,7 @@ public class FuncionarioDAO {
         try {
             conn = DatabaseLocator.getInstance().getConnection();
             st = conn.createStatement();
-            st.execute("insert into funcionario (CD_FUNC , NM_FUNC , SNM_FUNC , STATUS )"
+            st.execute("insert into funcionario (idFuncionario, nome, sobrenome, status)"
                     + " values ('" + funcionario.getCodFunc() + "', '" + funcionario.getNomeFunc() + "', '" + funcionario.getSobrenomeFunc() + "'"
                     + ", '" + funcionario.getStatus() + "')");
         } catch (SQLException e) {
