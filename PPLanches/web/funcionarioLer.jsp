@@ -45,8 +45,8 @@
                             <td class="title"> <c:out value="${funcionario.sobrenome}" />                        
                             <td class="title"> <c:out value="${funcionario.status}"/>
                             <td class="acao">
-                                <a href="FrontController?action=PrepararEditarFuncionario&codigo=<c:out value="${funcionario.codFunc}" />"><input type="submit" value="" class="btnOpEditar"></a>
-                                <a href="FrontController?action=ApagarFuncionario&codigo=<c:out value="${funcionario.codFunc}" />"><input type="submit" value="" class="btnOpDeletar"></a>
+                                <a href="FrontController?action=PrepararEditarFuncionario&codigo=<c:out value="${funcionario.idFuncionario}" />"><input type="submit" value="" class="btnOpEditar"></a>
+                                <a href="FrontController?action=ApagarFuncionario&codigo=<c:out value="${funcionario.idFuncionario}" />"><input type="submit" value="" class="btnOpDeletar"></a>
                             </td>
                         </tr>
                     </c:forEach>

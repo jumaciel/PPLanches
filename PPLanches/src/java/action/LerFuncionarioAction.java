@@ -20,9 +20,9 @@ public class LerFuncionarioAction implements Action {
         try {
 //            FuncionarioDAO.obterFuncionarios();
 //            Funcionario funcionario = new Funcionario();
-//            funcionario.setNome(funcionario.getNome());
-//            funcionario.setEstado(new FuncionarioCadastrado());
-//            String r ="T: "+funcionario.getNomeEstado().getEstado();
+//            funcionario.setNomeFunc(funcionario.getNomeFunc());
+//            funcionario.setFuncEstado(new FuncionarioCadastrado());
+//            String r ="T: "+funcionario.getFuncEstado();
 //             request.setAttribute("r",r);
             request.setAttribute("funcionarios", FuncionarioDAO.obterFuncionarios());
             RequestDispatcher view = request.getRequestDispatcher("funcionarioLer.jsp");

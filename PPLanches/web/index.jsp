@@ -20,7 +20,7 @@ and open the template in the editor.
                         <li class="pesqt">Funcionarios
                             <div class="dropdown-content">
                                 <a href="funcionarioCadastro.jsp">Cadastrar</a>
-                                <a href="funcionarioLer.jsp">Pesquisar</a>
+                                <a href="FrontController?action=LerFuncionario">Pesquisar</a>
                             </div>
                         </li>
                         <li class="pesqt2">Clientes

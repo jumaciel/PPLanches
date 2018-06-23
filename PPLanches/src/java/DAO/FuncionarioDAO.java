@@ -29,7 +29,7 @@ public class FuncionarioDAO {
             conn = DatabaseLocator.getInstance().getConnection();
             st = conn.createStatement();
             st.execute("insert into funcionario (idFuncionario, nome, sobrenome, status)"
-                    + " values ('" + funcionario.getCodFunc() + "', '" + funcionario.getNomeFunc() + "', '" + funcionario.getSobrenomeFunc() + "'"
+                    + " values ('" + funcionario.getIdFuncionario() + "', '" + funcionario.getNome() + "', '" + funcionario.getSobrenome() + "'"
                     + ", '" + funcionario.getStatus() + "')");
         } catch (SQLException e) {
             throw e;
@@ -44,7 +44,7 @@ public class FuncionarioDAO {
         try {
             conn = DatabaseLocator.getInstance().getConnection();
             st = conn.createStatement();
-            st.execute("delete from funcionario where CD_FUNC ='" + funcionario.getCodFunc() + "'");
+            st.execute("delete from funcionario where idFuncionario ='" + funcionario.getIdFuncionario() + "'");
         } catch (SQLException e) {
             throw e;
         } finally {
@@ -61,10 +61,10 @@ public class FuncionarioDAO {
             st = conn.createStatement();
             ResultSet rs = st.executeQuery("select * from funcionario");
             while (rs.next()) {
-                Funcionario funcionario = new Funcionario(rs.getInt("CD_FUNC"),
-                        rs.getString("NM_FUNC"),
-                        rs.getString("SNM_FUNC"),
-                        rs.getString("STATUS"));
+                Funcionario funcionario = new Funcionario(rs.getInt("idFuncionario"),
+                        rs.getString("nome"),
+                        rs.getString("sobrenome"),
+                        rs.getString("status"));
                 funcionarios.add(funcionario);
             }
         } catch (SQLException e) {
@@ -82,12 +82,12 @@ public class FuncionarioDAO {
         try {
             conn = DatabaseLocator.getInstance().getConnection();
             st = conn.createStatement();
-            ResultSet rs = st.executeQuery("select * from funcionario where CD_FUNC = " + codigo);
+            ResultSet rs = st.executeQuery("select * from funcionario where idFuncionario = " + codigo);
             rs.first();
-            funcionario = new Funcionario(rs.getInt("CD_FUNC"),
-                        rs.getString("NM_FUNC"),
-                        rs.getString("SNM_FUNC"),
-                        rs.getString("STATUS"));
+            funcionario = new Funcionario(rs.getInt("idFuncionario"),
+                        rs.getString("nome"),
+                        rs.getString("sobrenome"),
+                        rs.getString("status"));
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
@@ -100,12 +100,12 @@ public class FuncionarioDAO {
         Connection conn = null;
         try {
             conn = DatabaseLocator.getInstance().getConnection();
-            String sql = "update funcionario set NM_FUNC = ?, SNM_FUNC = ? , STATUS = ? where CD_FUNC = ?";
+            String sql = "update funcionario set nome = ?, sobrenome = ? , status = ? where idFuncionario = ?";
             PreparedStatement comando = conn.prepareStatement(sql);
-            comando.setString(1, funcionario.getNomeFunc());            
-            comando.setString(2, funcionario.getSobrenomeFunc());
+            comando.setString(1, funcionario.getNome());            
+            comando.setString(2, funcionario.getSobrenome());
             comando.setString(3, funcionario.getStatus());
-            comando.setInt(4, funcionario.getCodFunc());
+            comando.setInt(4, funcionario.getIdFuncionario());
             comando.execute();
             comando.close();
             conn.close();

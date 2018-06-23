@@ -4,27 +4,36 @@ import state.FuncionarioEstado;
 import state.FuncionarioCadastrado;
 
 public class Funcionario {
-    private int codFunc;
-    private String nomeFunc;
-    private String sobrenomeFunc;
+    private int idFuncionario;
+    private String nome;
+    private String sobrenome;
     private String status;
     private FuncionarioEstado funcEstado;
 
-    public Funcionario(int codFunc, String nome, String sobrenome, String status ) {
-        this.codFunc = codFunc;
-        this.nomeFunc = nome;
-        this.sobrenomeFunc = sobrenome;
+    public Funcionario(int idFuncionario, String nome, String sobrenome, String status ) {
+        this.idFuncionario = idFuncionario;
+        this.nome = nome;
+        this.sobrenome = sobrenome;
         this.status = status;
 
     }
 
-    public Funcionario(int codFunc) {
-        this.codFunc = codFunc;
+    public Funcionario(String nome, String sobrenome, String status) {
+        this.nome = nome;
+        this.sobrenome = sobrenome;
+        this.status = status;
+    }
+    
+    
+
+    public Funcionario(int idFuncionario) {
+        this.idFuncionario = idFuncionario;
     }
 
     public Funcionario() {
         this.funcEstado = new FuncionarioCadastrado();
     }
+
     
     public String Cadastrar(Funcionario f) {
         return funcEstado.Cadastrado(f);
@@ -34,28 +43,28 @@ public class Funcionario {
         return funcEstado.Demitido(f);
     }
 
-    public int getCodFunc() {
-        return codFunc;
+    public int getIdFuncionario() {
+        return idFuncionario;
     }
 
-    public void setCodFunc(int codFunc) {
-        this.codFunc = codFunc;
+    public void setIdFuncionario(int idFuncionario) {
+        this.idFuncionario = idFuncionario;
     }
 
-    public String getNomeFunc() {
-        return nomeFunc;
+    public String getNome() {
+        return nome;
     }
 
-    public void setNomeFunc(String nomeFunc) {
-        this.nomeFunc = nomeFunc;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public String getSobrenomeFunc() {
-        return sobrenomeFunc;
+    public String getSobrenome() {
+        return sobrenome;
     }
 
-    public void setSobrenomeFunc(String sobrenomeFunc) {
-        this.sobrenomeFunc = sobrenomeFunc;
+    public void setSobrenome(String sobrenome) {
+        this.sobrenome = sobrenome;
     }
 
     public String getStatus() {
@@ -64,7 +73,7 @@ public class Funcionario {
 
     public void setStatus(String status) {
         this.status = status;
-    }    
+    }
 
     public FuncionarioEstado getFuncEstado() {
         return funcEstado;
@@ -73,6 +82,8 @@ public class Funcionario {
     public void setFuncEstado(FuncionarioEstado funcEstado) {
         this.funcEstado = funcEstado;
     }
+
+ 
     
     
     

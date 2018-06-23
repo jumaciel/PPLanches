@@ -15,7 +15,7 @@ public class GravarFuncionarioAction implements Action {
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        int codFunc = Integer.parseInt(request.getParameter("txtCodFunc"));
+       
         String nome = request.getParameter("txtNome");
         String sobrenome = request.getParameter("txtSobrenome");
         String status = request.getParameter("txtStatus");
@@ -23,7 +23,7 @@ public class GravarFuncionarioAction implements Action {
         if (nome.equals("")) {
             response.sendRedirect("index.jsp");
         } else {
-            Funcionario funcionario = new Funcionario(codFunc , nome, sobrenome , status);
+            Funcionario funcionario = new Funcionario( nome, sobrenome , status);
             try {
                 FuncionarioDAO.getInstance().save(funcionario);
                 response.sendRedirect("FrontController?action=LerFuncionario");

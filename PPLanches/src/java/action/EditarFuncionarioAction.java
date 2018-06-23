@@ -37,11 +37,11 @@ public class EditarFuncionarioAction implements Action {
             
             if (s.equals("Cadastrado")) {
                 funcionario.setFuncEstado(new FuncionarioCadastrado());
-                String r = funcionario.getNomeFunc() + " esta no estado " + funcionario.getFuncEstado().getEstado(funcionario) + " - " + funcionario.Demitido(funcionario);
+                String r = funcionario.getNome() + " esta no estado " + funcionario.getFuncEstado().getEstado(funcionario) + " - " + funcionario.Demitido(funcionario);
                 request.setAttribute("r", r);
             } else if (s.equals("Demitido")) {
                 funcionario.setFuncEstado(new FuncionarioDemitido());
-                String r = funcionario.getNomeFunc() + " esta no estado " + funcionario.getFuncEstado().getEstado(funcionario) + " - " + funcionario.Demitido(funcionario);
+                String r = funcionario.getNome() + " esta no estado " + funcionario.getFuncEstado().getEstado(funcionario) + " - " + funcionario.Demitido(funcionario);
                 request.setAttribute("r", r);
             }
           
@@ -56,7 +56,7 @@ public class EditarFuncionarioAction implements Action {
 
     private void confirmarEditar(HttpServletRequest request, HttpServletResponse response) {
         try {
-            int codFunc = Integer.parseInt(request.getParameter("txtCodFunc"));
+            int codFunc = Integer.parseInt(request.getParameter("txtIdFuncionario"));
             String nome = request.getParameter("txtNome");;          
             String sobrenome = request.getParameter("txtSobrenome");
             String status = request.getParameter("txtStatus");
