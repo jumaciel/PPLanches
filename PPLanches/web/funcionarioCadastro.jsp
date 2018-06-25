@@ -44,7 +44,7 @@
                         </tr>
                         <td>
                             Estado<br/>
-                            <select name="txtStatus" href="FrontController?action=LerFuncionario&acao=estado">
+                            <select name="txtStatus">
                                 <option value="Demitido">Selecione</option>
                                 <option value="Cadastrado">Cadastrado</option>
                                 <option value="Demitido">Demitido</option>

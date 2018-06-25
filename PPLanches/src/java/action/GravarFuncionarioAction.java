@@ -23,7 +23,7 @@ public class GravarFuncionarioAction implements Action {
         if (nome.equals("")) {
             response.sendRedirect("index.jsp");
         } else {
-            Funcionario funcionario = new Funcionario( nome, sobrenome , status);
+            Funcionario funcionario = new Funcionario(0, nome, sobrenome , status);
             try {
                 FuncionarioDAO.getInstance().save(funcionario);
                 response.sendRedirect("FrontController?action=LerFuncionario");
