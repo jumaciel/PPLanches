@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Funcionario;
-import DAO.FuncionarioDAO;
+import persistence.FuncionarioDAO;
 
 public class GravarFuncionarioAction implements Action {
 

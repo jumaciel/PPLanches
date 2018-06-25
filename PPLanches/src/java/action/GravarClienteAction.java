@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Cliente;
-import DAO.ClienteDAO;
+import persistence.ClienteDAO;
 import model.Cliente;
 
 public class GravarClienteAction implements Action {

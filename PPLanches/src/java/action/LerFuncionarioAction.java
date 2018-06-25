@@ -7,7 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Funcionario;
-import DAO.FuncionarioDAO;
+import persistence.FuncionarioDAO;
 import state.FuncionarioCadastrado;
 
 public class LerFuncionarioAction implements Action {

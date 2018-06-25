@@ -8,7 +8,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Funcionario;
-import DAO.FuncionarioDAO;
+import persistence.FuncionarioDAO;
 import state.FuncionarioCadastrado;
 import state.FuncionarioDemitido;
 
@@ -21,7 +21,7 @@ public class PrepararEditarFuncionarioAction implements Action {
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
         try {
-            int codFunc = Integer.parseInt(request.getParameter("txtIdFuncionario"));
+            int codFunc = Integer.parseInt(request.getParameter("codigo"));
             Funcionario funcionario = FuncionarioDAO.obterFuncionario(codFunc);
             String s = ""+funcionario.getStatus();
             

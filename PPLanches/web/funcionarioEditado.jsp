@@ -30,26 +30,25 @@
             </div>
             <div id="tCadastro">
                 <table class="tbCor">
-                    <form action="FrontController?action=GravarFuncionario" method="post">
+                    <form action="FrontController?action=EditarFuncionario&codigo=<c:out value="${funcionario.idFuncionario}" />" method="post">
                         <tr>
                             <td colspan="5" class="tbTituloNome">Cadastro Funcionario</td>
                         </tr>
                         <tr>
                             <td colspan="4">
                                 Nome<br/>
-                                <input type="text" size="20" name="txtNome">
+                                <input type="text" size="20" name="txtNome" value="${funcionario.nome}">
                             </td>
                             <td>
                                 Sobrenome<br/>
-                                <input type="text" name="txtSobrenome">
+                                <input type="text" name="txtSobrenome" value="${funcionario.sobrenome}">
                             </td>
                         </tr>
                         <td>
                             Estado<br/>
-                            <select name="txtStatus" href="FrontController?action=LerFuncionario&acao=estado">
-                                <option value="Demitido">Selecione</option>
-                                <option value="Cadastrado">Cadastrado</option>
-                                <option value="Demitido">Demitido</option>
+                            <select name="txtStatus">
+                                <option value="Cadastrado"<c:if test="${funcionario.status == 'Cadastro'}"> selected</c:if>>Cadastrado</option>
+                                <option value="Demitido"<c:if test="${funcionario.status == 'Demitido'}"> selected</c:if>>Demitido</option>
                             </select>
                         </td>
                         <tr>
