@@ -30,7 +30,7 @@
             </div>
             <div id="tCadastro">
                 <table class="tbCor">
-                    <form action="FrontController?action=EditarCliente&codigo=<c:out value="${cliente.idCliente}" />" method="post">
+                    <form action="FrontController?action=EditarCliente&codigo=<c:out value="${cliente.id}" />" method="post">
                         <tr>
                             <td colspan="5" class="tbTituloNome">Cadastro Cliente</td>
                         </tr>
@@ -45,11 +45,11 @@
                             </td>
                             <td>
                                 Endereço<br/>
-                                <input type="text" name="txtEndereco" value="${cliente.sobrenome}">
+                                <input type="text" name="txtEndereco" value="${cliente.endereco}">
                             </td>
                             <td>
                                 Telefone<br/>
-                                <input type="text" name="txtTelefone" value="${cliente.sobrenome}">
+                                <input type="text" name="txtTelefone" value="${cliente.telefone}">
                             </td>
                         </tr>
                         <td>

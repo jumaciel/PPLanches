@@ -1,6 +1,7 @@
 package persistence;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -99,6 +100,26 @@ public class ClienteDAO {
         return cliente;
     }
 
+      public static void alterar(Cliente cliente) throws SQLException, ClassNotFoundException {
+        Connection conn = null;
+        try {
+            conn = DatabaseLocator.getInstance().getConnection();
+            String sql = "update cliente set nome = ?, sobrenome = ? , endereco = ?, telefone = ?, status = ? where id = ?";
+            PreparedStatement comando = conn.prepareStatement(sql);
+            comando.setString(1, cliente.getNome());            
+            comando.setString(2, cliente.getSobrenome());
+            comando.setString(3, cliente.getEndereco());
+            comando.setString(4, cliente.getTelefone());
+            comando.setString(5, cliente.getStatus());
+            comando.setInt(6, cliente.getId());
+            comando.execute();
+            comando.close();
+            conn.close();
+            
+        } catch (SQLException e) {
+            throw e;
+        }
+    }
     private static void closeResources(Connection conn, Statement st) {
         try {
             if (st != null) {
