@@ -16,13 +16,14 @@
                     <ul id="menuPesquisas">
                         <li class="pesqt">Funcionarios
                             <div class="dropdown-content">
-                                <a href="clienteLer.jsp">Pesquisar</a>
+                                <a href="funcionarioCadastro.jsp">Cadastrar</a>
+                                <a href="FrontController?action=LerFuncionario">Pesquisar</a>
                             </div>
                         </li>
                         <li class="pesqt2">Clientes
                             <div class="dropdown-content2">
-                                <a href="#">Cadastrar</a>
-                                <a href="#">Pesquisar</a>
+                                <a href="clienteCadastro.jsp">Cadastrar</a>
+                                <a href="FrontController?action=LerCliente">Pesquisar</a>
                             </div>
                         </li>
                     </ul>
