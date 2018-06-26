@@ -12,16 +12,19 @@ package model;
 public class Cliente {
     private int  id;
     private String nome;
+    private String sobrenome; 
     private String endereco;
-    private String sobrenome;
     private String telefone;
     private String status;
 
-    public Cliente(int id, String nome, String endereco, String sobrenome, String telefone, String status) {
+    public Cliente(int id){
+        this.id = id;
+    }
+    public Cliente(int id, String nome, String sobrenome, String endereco, String telefone, String status) {
         this.id = id;
         this.nome = nome;
-        this.endereco = endereco;
         this.sobrenome = sobrenome;
+        this.endereco = endereco;
         this.telefone = telefone;
         this.status = status;
     }

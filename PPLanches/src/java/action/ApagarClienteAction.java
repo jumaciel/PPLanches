@@ -20,7 +20,7 @@ public class ApagarClienteAction implements Action{
         } else {
             int id = Integer.parseInt(request.getParameter("codigo"));
             Cliente cliente = new Cliente(id);
-            try {
+           try {
                 ClienteDAO.getInstance().delete(cliente);
                 response.sendRedirect("FrontController?action=LerCliente");
             } catch (ClassNotFoundException ex) {
