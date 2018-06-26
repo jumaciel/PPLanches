@@ -40,8 +40,8 @@
                                 <input type="text" size="20" name="txtNome" value="${cliente.nome}">
                             </td>
                             <td>
-                                Sobrenome<br/>
-                                <input type="text" name="txtSobrenome" value="${cliente.sobrenome}">
+                                Email<br/>
+                                <input type="text" name="txtEmail" value="${cliente.email}">
                             </td>
                             <td>
                                 Endereço<br/>

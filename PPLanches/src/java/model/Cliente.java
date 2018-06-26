@@ -12,7 +12,7 @@ package model;
 public class Cliente {
     private int  id;
     private String nome;
-    private String sobrenome; 
+    private String email; 
     private String endereco;
     private String telefone;
     private String status;
@@ -20,10 +20,10 @@ public class Cliente {
     public Cliente(int id){
         this.id = id;
     }
-    public Cliente(int id, String nome, String sobrenome, String endereco, String telefone, String status) {
+    public Cliente(int id, String nome, String email, String endereco, String telefone, String status) {
         this.id = id;
         this.nome = nome;
-        this.sobrenome = sobrenome;
+        this.email = email;
         this.endereco = endereco;
         this.telefone = telefone;
         this.status = status;
@@ -61,12 +61,12 @@ public class Cliente {
         this.endereco = endereco;
     }
 
-    public String getSobrenome() {
-        return sobrenome;
+    public String getEmail() {
+        return email;
     }
 
-    public void setSobrenome(String sobrenome) {
-        this.sobrenome = sobrenome;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getTelefone() {

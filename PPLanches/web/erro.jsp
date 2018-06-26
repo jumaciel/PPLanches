@@ -21,11 +21,11 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
     <body>
         <table border="1" bgcolor="#f9f9f9" cellpadding="10" cellspacing="0" >
             <tr>
-                <th bgcolor="#d4d4d4" colspan="8"> <h2>Sistema de Posto de Saúde</h2></th>      
+                <th bgcolor="#117561" color="000000" colspan="8"> <h2>Infelizmente hoje você não será um PP!</h2></th>      
             </tr>
             <tr>
                 <td>
-                    <h3>Erro ao tentar gravar!</h3>
+                    <h3>Erro ao tentar gravar :(</h3>
                 </td>
             </tr>
         </table>

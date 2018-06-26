@@ -35,7 +35,7 @@
                     </tr>
                     <tr>
                         <td class="titleP"> Nome </td>
-                        <td class="titleP"> Sobrenome</td>
+                        <td class="titleP"> Email</td>
                         <td class="titleP"> Endereço</td>
                         <td class="titleP"> Telefone</td>
                         <td class="titleP"> Status</td>
@@ -44,7 +44,7 @@
                     <c:forEach items="${clientes}" var="cliente">
                         <tr>
                             <td class="title"> <c:out value="${cliente.nome}" />
-                            <td class="title"> <c:out value="${cliente.sobrenome}" />
+                            <td class="title"> <c:out value="${cliente.email}" />
                             <td class="title"> <c:out value="${cliente.endereco}" /> 
                             <td class="title"> <c:out value="${cliente.telefone}" /> 
                             <td class="title"> <c:out value="${cliente.status}"/>

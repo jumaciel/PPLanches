@@ -17,7 +17,7 @@ public class GravarClienteAction implements Action {
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String nome = request.getParameter("txtNome");
-        String sobrenome = request.getParameter("txtSobrenome");
+        String email = request.getParameter("txtEmail");
         String endereco = request.getParameter("txtEndereco");
         String telefone = request.getParameter("txtTelefone");
         String status = request.getParameter("txtStatus");
@@ -25,7 +25,7 @@ public class GravarClienteAction implements Action {
         if (nome.equals("")) {
             response.sendRedirect("index.jsp");
         } else {
-            Cliente cliente = new Cliente(0, nome, endereco, sobrenome, telefone, status);
+            Cliente cliente = new Cliente(0, nome, endereco, email, telefone, status);
             try {
                 ClienteDAO.getInstance().save(cliente);
                 response.sendRedirect("FrontController?action=LerCliente");

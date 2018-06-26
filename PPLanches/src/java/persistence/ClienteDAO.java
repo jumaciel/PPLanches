@@ -28,9 +28,9 @@ public class ClienteDAO {
         try {
             conn = DatabaseLocator.getInstance().getConnection();
             st = conn.createStatement();
-            st.execute("insert into cliente (id, nome, sobrenome, endereco, telefone, status)"
+            st.execute("insert into cliente (id, nome, email, endereco, telefone, status)"
                     + " values ('" + cliente.getId() + "', '" + cliente.getNome() + "'"
-                    + ", '" + cliente.getSobrenome() + "', '" + cliente.getEndereco() + "','" + cliente.getTelefone() + "','" + cliente.getStatus() + "')");
+                    + ", '" + cliente.getEmail() + "', '" + cliente.getEndereco() + "','" + cliente.getTelefone() + "','" + cliente.getStatus() + "')");
         } catch (SQLException e) {
             throw e;
         } finally {
@@ -63,7 +63,7 @@ public class ClienteDAO {
             while (rs.next()) {
                 Cliente cliente = new Cliente(rs.getInt("id"),
                         rs.getString("nome"),
-                        rs.getString("sobrenome"),
+                        rs.getString("email"),
                         rs.getString("endereco"),
                         rs.getString("telefone"),
                         rs.getString("status"));
@@ -88,7 +88,7 @@ public class ClienteDAO {
             rs.first();
             cliente = new Cliente(rs.getInt("id"),
                     rs.getString("nome"),
-                    rs.getString("sobrenome"),
+                    rs.getString("email"),
                     rs.getString("endereco"),
                     rs.getString("telefone"),
                     rs.getString("status"));
@@ -104,10 +104,10 @@ public class ClienteDAO {
         Connection conn = null;
         try {
             conn = DatabaseLocator.getInstance().getConnection();
-            String sql = "update cliente set nome = ?, sobrenome = ? , endereco = ?, telefone = ?, status = ? where id = ?";
+            String sql = "update cliente set nome = ?, email = ? , endereco = ?, telefone = ?, status = ? where id = ?";
             PreparedStatement comando = conn.prepareStatement(sql);
             comando.setString(1, cliente.getNome());            
-            comando.setString(2, cliente.getSobrenome());
+            comando.setString(2, cliente.getEmail());
             comando.setString(3, cliente.getEndereco());
             comando.setString(4, cliente.getTelefone());
             comando.setString(5, cliente.getStatus());

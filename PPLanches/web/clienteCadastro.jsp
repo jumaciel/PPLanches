@@ -38,8 +38,8 @@
                                 <input type="text" size="20" name="txtNome">
                             </td>
                             <td>
-                                Sobrenome<br/>
-                                <input type="text" name="txtSobrenome">
+                                Email<br/>
+                                <input type="text" name="txtEmail">
                             </td>
                         </tr>
                         <tr>
