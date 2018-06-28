@@ -19,4 +19,9 @@
             index.jsp
         </welcome-file>
     </welcome-file-list>
+    <dependency>
+	<groupId>org.simplejavamail</groupId>
+	<artifactId>simple-java-mail</artifactId>
+	<version>5.0.3</version>
+</dependency>
 </web-app>

@@ -1,4 +1,4 @@
-package br.padroes.observer;
+package observer;
 
 public abstract class DadosObserver {
 

@@ -1,4 +1,4 @@
-package br.padroes.observer;
+package observer;
 
 import java.util.ArrayList;
 

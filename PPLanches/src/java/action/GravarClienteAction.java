@@ -1,8 +1,8 @@
 package action;
 
-import br.padroes.observer.Dados;
-import br.padroes.observer.DadosSubject;
-import br.padroes.observer.msgClienteObserver;
+import observer.Dados;
+import observer.DadosSubject;
+import observer.msgClienteObserver;
 import controller.Action;
 import java.io.IOException;
 import java.sql.SQLException;
