@@ -39,15 +39,12 @@ and open the template in the editor.
                         <th colspan="2">Menu</th>
                     </tr>
                     <tr>
-                        <td><a href="menuPizza.jsp"><img src="img/pizza.jpg"</a></td>
                         <td><a href="menuHamburguer.jsp"><img src="img/hb.jpg"></a></td>
                     </tr>
                     <tr>
-                        <td class="nomeMenu"><a href="menuPizza.jsp">Pizza</a></td>
                         <td class="nomeMenu"><a href="menuHamburguer.jsp">Hamburguer</a></td>
                     </tr>
                 </table>
             </div>
-            <a href="clienteCadastro.jsp">Cadastrar</a>
     </body>
 </html>

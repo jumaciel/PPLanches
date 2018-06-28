@@ -52,14 +52,6 @@
                             <input type="text" name="txtTelefone">
                             </td>
                         </tr>
-                        <td>
-                            Estado<br/>
-                            <select name="txtStatus">
-                                <option value="Demitido">Selecione</option>
-                                <option value="Cadastrado">Cadastrado</option>
-                                <option value="Demitido">Demitido</option>
-                            </select>
-                        </td>
                         <tr>
                             <td>
                                 <a href="index.jsp" class="btnOptxt"> Inicio</a>

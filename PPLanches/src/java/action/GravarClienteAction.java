@@ -23,12 +23,11 @@ public class GravarClienteAction implements Action {
         String email = request.getParameter("txtEmail");
         String endereco = request.getParameter("txtEndereco");
         String telefone = request.getParameter("txtTelefone");
-        String status = request.getParameter("txtStatus");
 
         if (nome.equals("")) {
             response.sendRedirect("index.jsp");
         } else {
-            Cliente cliente = new Cliente(0, nome, endereco, email, telefone, status);
+            Cliente cliente = new Cliente(0, nome, endereco, email, telefone);
             try {
                 ClienteDAO.getInstance().save(cliente);
 

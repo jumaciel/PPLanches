@@ -19,9 +19,8 @@ public class PrepararEditarClienteAction implements Action {
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
         try {
-            int codFunc = Integer.parseInt(request.getParameter("codigo"));
-            Cliente cliente = ClienteDAO.obterCliente(codFunc);
-            String s = ""+cliente.getStatus();
+            int id = Integer.parseInt(request.getParameter("codigo"));
+            Cliente cliente = ClienteDAO.obterCliente(id);
             
 //            if (s.equals("Cadastrado")) {
 //                cliente.setFuncEstado(new ClienteCadastrado());
