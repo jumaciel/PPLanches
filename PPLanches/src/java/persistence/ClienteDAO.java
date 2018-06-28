@@ -28,9 +28,9 @@ public class ClienteDAO {
         try {
             conn = DatabaseLocator.getInstance().getConnection();
             st = conn.createStatement();
-            st.execute("insert into cliente (id, nome, email, endereco, telefone, status)"
+            st.execute("insert into cliente (id, nome, email, endereco, telefone)"
                     + " values ('" + cliente.getId() + "', '" + cliente.getNome() + "'"
-                    + ", '" + cliente.getEmail() + "', '" + cliente.getEndereco() + "','" + cliente.getTelefone() + "','" + cliente.getStatus() + "')");
+                    + ", '" + cliente.getEmail() + "', '" + cliente.getEndereco() + "','" + cliente.getTelefone() + "')");
         } catch (SQLException e) {
             throw e;
         } finally {
@@ -65,8 +65,7 @@ public class ClienteDAO {
                         rs.getString("nome"),
                         rs.getString("email"),
                         rs.getString("endereco"),
-                        rs.getString("telefone"),
-                        rs.getString("status"));
+                        rs.getString("telefone"));
                 clientes.add(cliente);
             }
         } catch (SQLException e) {
@@ -90,8 +89,7 @@ public class ClienteDAO {
                     rs.getString("nome"),
                     rs.getString("email"),
                     rs.getString("endereco"),
-                    rs.getString("telefone"),
-                    rs.getString("status"));
+                    rs.getString("telefone"));
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
@@ -104,14 +102,13 @@ public class ClienteDAO {
         Connection conn = null;
         try {
             conn = DatabaseLocator.getInstance().getConnection();
-            String sql = "update cliente set nome = ?, email = ? , endereco = ?, telefone = ?, status = ? where id = ?";
+            String sql = "update cliente set nome = ?, email = ? , endereco = ?, telefone = ? where id = ?";
             PreparedStatement comando = conn.prepareStatement(sql);
             comando.setString(1, cliente.getNome());            
             comando.setString(2, cliente.getEmail());
             comando.setString(3, cliente.getEndereco());
             comando.setString(4, cliente.getTelefone());
-            comando.setString(5, cliente.getStatus());
-            comando.setInt(6, cliente.getId());
+            comando.setInt(5, cliente.getId());
             comando.execute();
             comando.close();
             conn.close();

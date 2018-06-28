@@ -15,29 +15,19 @@ public class Cliente {
     private String email; 
     private String endereco;
     private String telefone;
-    private String status;
 
     public Cliente(int id){
         this.id = id;
     }
-    public Cliente(int id, String nome, String email, String endereco, String telefone, String status) {
+    public Cliente(int id, String nome, String email, String endereco, String telefone) {
         this.id = id;
         this.nome = nome;
         this.email = email;
         this.endereco = endereco;
         this.telefone = telefone;
-        this.status = status;
     }
 
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public int getId() {
+      public int getId() {
         return id;
     }
 

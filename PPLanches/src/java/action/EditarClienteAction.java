@@ -24,12 +24,11 @@ public class EditarClienteAction implements Action {
             String email = request.getParameter("txtEmail");
             String endereco = request.getParameter("txtEndereco");
             String telefone = request.getParameter("txtTelefone");
-            String status = request.getParameter("txtStatus");
             
             if (nome.equals("")) {
                 response.sendRedirect("index.jsp");
             } else {
-                Cliente cliente = new Cliente(codigo, nome, endereco, email, telefone, status);
+                Cliente cliente = new Cliente(codigo, nome, endereco, email, telefone);
 
                 ClienteDAO.alterar(cliente);
                 RequestDispatcher view = request.getRequestDispatcher("FrontController?action=LerCliente");

@@ -54,13 +54,6 @@
                                 <input type="text" name="txtTelefone" value="${cliente.telefone}">
                             </td>
                         </tr>
-                        <td>
-                            Estado<br/>
-                            <select name="txtStatus">
-                                <option value="Cadastrado"<c:if test="${cliente.status == 'Cadastro'}"> selected</c:if>>Cadastrado</option>
-                                <option value="Demitido"<c:if test="${cliente.status == 'Demitido'}"> selected</c:if>>Demitido</option>
-                            </select>
-                        </td>
                         <tr>
                             <td>
                                 <a href="index.jsp" class="btnOptxt"> Inicio</a>
