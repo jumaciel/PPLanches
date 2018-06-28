@@ -48,5 +48,6 @@ and open the template in the editor.
                     </tr>
                 </table>
             </div>
+            <a href="clienteCadastro.jsp">Cadastrar</a>
     </body>
 </html>

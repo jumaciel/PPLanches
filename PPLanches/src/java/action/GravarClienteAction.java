@@ -1,5 +1,8 @@
 package action;
 
+import br.padroes.observer.Dados;
+import br.padroes.observer.DadosSubject;
+import br.padroes.observer.msgClienteObserver;
 import controller.Action;
 import java.io.IOException;
 import java.sql.SQLException;
@@ -28,6 +31,12 @@ public class GravarClienteAction implements Action {
             Cliente cliente = new Cliente(0, nome, endereco, email, telefone, status);
             try {
                 ClienteDAO.getInstance().save(cliente);
+
+                //observer
+                DadosSubject dados = new DadosSubject();
+                dados.attach(new msgClienteObserver(dados));
+                dados.setState(new Dados(nome, email, endereco));
+
                 response.sendRedirect("FrontController?action=LerCliente");
             } catch (ClassNotFoundException ex) {
             } catch (SQLException ex) {
@@ -35,4 +44,6 @@ public class GravarClienteAction implements Action {
             }
         }
     }
+    
+    
 }
