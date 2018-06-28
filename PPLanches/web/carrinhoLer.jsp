@@ -22,7 +22,7 @@
                         </li>
                         <li class="pesqt2">Clientes
                             <div class="dropdown-content2">
-                                <a href="clienteCadastro.jsp">Cadastrar</a>
+                                <a href="carrinhoCadastro.jsp">Cadastrar</a>
                                 <a href="FrontController?action=LerCliente">Pesquisar</a>
                             </div>
                         </li>
@@ -36,23 +36,16 @@
                         <td colspan="18" class="tbTituloNome">Lista de Clientes</td>
                     </tr>
                     <tr>
-                        <td class="titleP"> Nome </td>
-                        <td class="titleP"> Email</td>
-                        <td class="titleP"> Endereço</td>
-                        <td class="titleP"> Telefone</td>
-                        <td class="titleP"> Status</td>
+                        <td class="titleP"> Descricao </td>
+                        <td class="titleP"> Valor</td>
                         <td class="acao" colspan="2"> Ação</td>  
                     </tr>
-                    <c:forEach items="${clientes}" var="cliente">
+                    <c:forEach items="${carrinhos}" var="carrinho">
                         <tr>
-                            <td class="title"> <c:out value="${cliente.nome}" />
-                            <td class="title"> <c:out value="${cliente.email}" />
-                            <td class="title"> <c:out value="${cliente.endereco}" /> 
-                            <td class="title"> <c:out value="${cliente.telefone}" /> 
-                            <td class="title"> <c:out value="${cliente.status}"/>
+                            <td class="title"> <c:out value="${carrinho.descricao}" />
+                            <td class="title"> <c:out value="${carrinho.valorTotal}" />
                             <td class="acao">
-                                <a href="FrontController?action=PrepararEditarCliente&codigo=<c:out value="${cliente.id}" />"><input type="submit" value="" class="btnOpEditar"></a>
-                                <a href="FrontController?action=ApagarCliente&codigo=<c:out value="${cliente.id}" />"><input type="submit" value="" class="btnOpDeletar"></a>
+                                <a href="FrontController?action=ApagarCarrinho&codigo=<c:out value="${carrinho.codPed}" />"><input type="submit" value="" class="btnOpDeletar"></a>
                             </td>
                         </tr>
                     </c:forEach>

@@ -26,6 +26,7 @@
                                 <a href="FrontController?action=LerCliente">Pesquisar</a>
                             </div>
                         </li>
+                        <li class="pesqt"><a href="FrontController?action=LerCarrinho">Carrinho</a></li>
                     </ul>
                 </div>
             </div>

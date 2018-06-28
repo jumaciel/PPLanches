@@ -79,7 +79,7 @@ body{
     min-width: 90px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-    right: 280px;
+    right: 360px;
 }
 .dropdown-content2 {
     display: none;
@@ -88,7 +88,7 @@ body{
     min-width: 90px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-    right: 190px;
+    right: 270px;
 }
 .dropdown-content a {
     color: black;
@@ -261,7 +261,7 @@ width:150px;
     border-collapse: collapse;
 }
 .tbCorConsulta tr td{
-    width: 115px;
+    width: 150px;
 }
 .nomeSelect {
     width: 540px;

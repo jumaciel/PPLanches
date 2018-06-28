@@ -1,10 +1,6 @@
-<%-- 
-    Document   : menuHamburguer
-    Created on : 14/06/2018, 09:32:36
-    Author     : Aluno
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -35,7 +31,8 @@
             </div>
             <div id="tCadastro">
                 <table>
-                    <form
+                    <form action="FrontController?action=GravarCarrinho" method="post">
+                       
                         <tr>
                             <td><img src="img/hb_big_bao.png" class="hb"></td>
                             <td><img src="img/hb_bao_bacon_com_file.png" class="hb"></td>
@@ -43,22 +40,22 @@
                             <td><img src="img/hb_mega_bao.png" class="hb"></td>
                         </tr>
                         <tr>
-                            <td><input type="checkbox" name="queijo">Big bão</td>
-                            <td><input type="checkbox" name="queijo">Bão Bacon </td>
-                            <td><input type="checkbox" name="queijo">Mais que bão</td>
-                            <td><input type="checkbox" name="queijo">Mega bão</td>
+                            <td><input type="radio" name="hb" value="Big bao">Big bão <br>R$16,00</td>
+                            <td><input type="radio" name="hb" value="Bao bacon">Bão Bacon  <br>R$12,00 </td>
+                            <td><input type="radio" name="hb" value="Mais que bao">Mais que bão  <br>R$12,00</td>
+                            <td><input type="radio" name="hb" value="Mega bao">Mega bão  <br>R$17,00</td>
                         </tr>
-                         <tr>
+                        <tr>
                             <td><img src="img/hb_mio_de_bao.png" class="hb"></td>
                             <td><img src="img/hb_mucado_bao.png" class="hb"></td>
                             <td><img src="img/hb_trem_bao.png" class="hb"></td>
                             <td><img src="img/hb_tudi_bao.png" class="hb"></td>
                         </tr>
                         <tr>
-                            <td><input type="checkbox" name="queijo">Mio que bão</td>
-                            <td><input type="checkbox" name="queijo">Mucado bão</td>
-                            <td><input type="checkbox" name="queijo">Trem bão</td>
-                            <td><input type="checkbox" name="queijo">Tudi bão</td>
+                            <td><input type="radio" name="hb" value="Mio que bao">Mio que bão  <br>R$8,00</td>
+                            <td><input type="radio" name="hb" value="Mucado bao">Mucado bão <br>R$8,00</td>
+                            <td><input type="radio" name="hb" value="Trem bao">Trem bão  <br>R$19,00</td>
+                            <td><input type="radio" name="hb" value="Tudi bao">Tudi bão  <br>R$13,00</td>
                         </tr>
                         <tr>
                             <td colspan="4">
@@ -67,11 +64,11 @@
                         </tr>
                         <tr>
                             <td colspan="4">
-                                <input type="checkbox" name="queijo">Queijo
-                                <input type="checkbox" name="frango">Frango
-                                <input type="checkbox" name="ovo">Ovo
-                                <input type="checkbox" name="bacon">Bacon
-                                <input type="checkbox" name="catupiry">Catupiry
+                                <input type="radio" name="adc" value="Queijo">Queijo
+                                <input type="radio" name="adc" value="Frango">Frango
+                                <input type="radio" name="adc" value="Ovo">Ovo
+                                <input type="radio" name="adc" value="Bacon">Bacon
+                                <input type="radio" name="adc" value="Catupiry">Catupiry
 
                             </td>
                         </tr>
